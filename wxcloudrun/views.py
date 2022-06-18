@@ -64,3 +64,8 @@ def get_count():
     """
     counter = Counters.query.filter(Counters.id == 1).first()
     return make_succ_response(0) if counter is None else make_succ_response(counter.count)
+
+
+@app.route('/open/<int:door>', methods=['GET'])
+def test_open(door):
+    return make_succ_response(f'success:{door}')
